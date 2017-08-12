@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
 Version=1.0
-Name=SnxConnect
-Comment=Starts the SNX in a Shell
+Name=Oxygen
+Comment=Starts the Eclipse-Oxygen from shell
 Type=Application
-Exec=/home/wolf/bin/eclipse-oxygen-startup.sh
-Icon=/blobs/user/pics/Icons/desktop/eclipse-oxygen-ligth.png
+Exec=/home/developer/bin/eclipse-oxygen-startup.sh
+Icon=/home/developer/bin/icons/eclipse-oxygen-ligth.png
 Name[de_DE]=Oxygen
 Comment[de_DE]=Start Apache-Oxygen in a Shell
