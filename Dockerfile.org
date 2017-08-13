@@ -23,14 +23,14 @@ RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
 # the netbeans image
 RUN apt-get update && apt-get install -y libgtk2.0-0 libcanberra-gtk-module
 
-#...use "-q"  at end of command to load data in quiete mode 
-RUN wget http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/<ECLIPSE-RELEASE> -O /tmp/eclipse.tar.gz && \
+#...Install eclipse oxygen
+RUN wget http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/<ECLIPSE-RELEASE> -O /tmp/eclipse.tar.gz -q && \
     echo 'Installing eclipse' && \
     tar -xf /tmp/eclipse.tar.gz -C /opt && \
     rm /tmp/eclipse.tar.gz
 
 # install maven
-RUN wget http://www-eu.apache.org/dist/maven/maven-3/<MAVEN-RELEASE>/binaries/apache-maven-<MAVEN-RELEASE>-bin.tar.gz  -O /tmp/maven.tar.gz && \
+RUN wget http://www-eu.apache.org/dist/maven/maven-3/<MAVEN-RELEASE>/binaries/apache-maven-<MAVEN-RELEASE>-bin.tar.gz  -O /tmp/maven.tar.gz -q && \
    echo 'Installing maven ' && \
    tar -xf /tmp/maven.tar.gz -C /opt && \
    mv /opt/apache-maven-<MAVEN-RELEASE> /opt/maven && \
@@ -40,6 +40,7 @@ RUN useradd -ms /bin/bash <CURRENT-USER> && \
     usermod -aG sudo <CURRENT-USER>
 
 USER <CURRENT-USER>
+ENV PATH "${PATH}:/opt/maven/bin"
 ENV HOME /home/<CURRENT-USER>
 WORKDIR /home/<CURRENT-USER>
 

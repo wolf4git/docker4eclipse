@@ -39,4 +39,14 @@ if everything got fine
 eclipse-oxygen should start now und you can use it
 
 
+You have now a new docker image 
+   REPOSITORY      TAG    CREATED        SIZE
+   liquid/eclipse  0.1.2  a minute ago   1.12GB
+
+If you have starrted the container, you will see 
+   CONTAINER ID    IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
+   d89e48f1bd53    liquid/eclipse:0.1.2   "/bin/sh -c /opt/e..."   2 minutes ago       Up 2 minutes                            eclipse
+
+This new container is named "eclipse"
+To get into the running container call: docker exec -it eclipse bash
 
