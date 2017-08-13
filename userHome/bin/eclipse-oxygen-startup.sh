@@ -2,7 +2,7 @@
 # snx
 set -xv
 declare _theProfile="local"
-declare _theCommand="~/bin/dockers/eclipse-oxygen/run.sh"
+declare _theCommand="~/bin/dockers/docker4eclipse/run.sh"
 echo "."
 echo "."
 echo "."
