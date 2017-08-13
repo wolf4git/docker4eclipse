@@ -23,14 +23,13 @@ RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
 # the netbeans image
 RUN apt-get update && apt-get install -y libgtk2.0-0 libcanberra-gtk-module
 
-#UN wget http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/<ECLIPSE-RELEASE> -O /tmp/eclipse.tar.gz -q && \
+#...use "-q"  at end of command to load data in quiete mode 
 RUN wget http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/<ECLIPSE-RELEASE> -O /tmp/eclipse.tar.gz && \
     echo 'Installing eclipse' && \
     tar -xf /tmp/eclipse.tar.gz -C /opt && \
     rm /tmp/eclipse.tar.gz
 
 # install maven
-#UN wget http://www-eu.apache.org/dist/maven/maven-3/<MAVEN-RELEASE>/binaries/apache-maven-<MAVEN-RELEASE>-bin.tar.gz  -O /tmp/maven.tar.gz -q && \
 RUN wget http://www-eu.apache.org/dist/maven/maven-3/<MAVEN-RELEASE>/binaries/apache-maven-<MAVEN-RELEASE>-bin.tar.gz  -O /tmp/maven.tar.gz && \
    echo 'Installing maven ' && \
    tar -xf /tmp/maven.tar.gz -C /opt && \
