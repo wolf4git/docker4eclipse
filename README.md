@@ -1,29 +1,42 @@
 docker4eclipse
 
 This is a repo to run Eclipse-Qxygen on Ubuntu from a Dockercontainer
+To get this running, there are some pre-requests
+- you need to have docker up and running
+- docker should be added to sudo (sudo groupadd docker)
+- you should belong to docker (sudo usermod -aG docker $USER) 
+- you need to have gnome-terminal installed (sudo apt install gnome-terminal)
 
-Create some folder's under your home
-use init.sh to do the job for you
+How to begin
+- open a terminal 
+- create new folder dockers under your user-home
+- clone this repo by  
 
-You now have a new folder ~/dockers/eclipse-oxygen
-please place the content from this git here
+git clone https://github.com/wolf4git/docker4eclipse.git
 
-Then open a shell and "cd ~/dockers/eclipse-oxygen"
-...next: start: ./build.sh 
+How to proceed
+Step into new folder docker4eclipse
+- init.sh will do the rest of the job for you
+- create folders ~/bin ~/bin/icons
+- copy eclipse-oxygen-startup.sh to ~/bin
+- build an Oxygen.desktop file based on your current user
+- move the new Oxygen.desktop file to your desktop
+- a new Icon should appear on your desktop
+
+If everything is fine, then go ahead with the docker-container
+- build.sh will build your container...this my take some time
+
+Now you are read to click your desktop icon
+
+How does it work:
+- this Desktop-Command will call ~/bin/eclipse-oxygen-startup.sh 
+- the eclipse-oxygen-startup.sh opens a gnome-terminal and calls  ~/dockers/docker4eclipse/run.sh
+- ~/dockers/docker4eclipse/run.sh is the script to start the docker container
+
 
 if everything got fine 
 ...then start: ./run.sh
 eclipse-oxygen should start now und you can use it
 
 
-Desktop
-if you like, there is a 
-- Desktopfile
-- Desktop-Icon
-- Desktop-Script
-
-Goto userHome/Desktop and call build.sh
-this creates userHome/Desktop/Oxygen.desktop based on userHome/Desktop/Oxygen.desktop.org
-Now just place the userHome/Desktop/Oxygen.desktop
-to your Desktop and a new Icon should appear on your desktop
 
