@@ -21,6 +21,9 @@ if you like, there is a
 - Desktopfile
 - Desktop-Icon
 - Desktop-Script
-just place the userHome/Desktop/Oxygen.desktop
+
+Goto userHome/Desktop and call build.sh
+this creates userHome/Desktop/Oxygen.desktop based on userHome/Desktop/Oxygen.desktop.org
+Now just place the userHome/Desktop/Oxygen.desktop
 to your Desktop and a new Icon should appear on your desktop
 
